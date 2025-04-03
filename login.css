@@ -2,55 +2,120 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
+
 body {
     background-color: #c9d6ff;
     background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    min-height: 100vh;
 }
+
+/* Navbar Styles */
+.navbar {
+    background-color: #003366;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    border-radius: 0.6rem;
+    height: 45px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo-subtext {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 3px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Main Container */
 .container {
     background: #fff;
-    width: 450px;
+    width: 90%;
+    max-width: 450px;
     padding: 1.5rem;
     margin: 50px auto;
     border-radius: 10px;
-    box-shadow: 0 20px 35px rgba(0, 0, 1, 0.9);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
+
 form {
-    margin: 0 2rem;
+    margin: 0 1rem;
 }
+
 .form-title {
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
-    padding: 1.3rem;
+    padding: 1rem 0;
     margin-bottom: 0.4rem;
+    color: #003366;
 }
+
+/* Input Fields */
+.input-group {
+    padding: 1% 0;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group i {
+    position: absolute;
+    color: black;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 input {
     color: inherit;
     width: 100%;
     background-color: transparent;
     border: none;
     border-bottom: 1px solid #757575;
-    padding-left: 1.5rem;
+    padding: 10px 0 10px 1.5rem;
     font-size: 15px;
 }
-.input-group {
-    padding: 1% 0;
-    position: relative;
-}
-.input-group i {
-    position: absolute;
-    color: black;
-}
+
 input:focus {
     background-color: transparent;
     outline: transparent;
-    border-bottom: 2px solid hsl(327, 90%, 28%);
+    border-bottom: 2px solid #003366;
 }
+
 input::placeholder {
     color: transparent;
 }
+
 label {
     color: #757575;
     position: relative;
@@ -59,167 +124,304 @@ label {
     cursor: auto;
     transition: 0.3s ease all;
 }
+
 input:focus ~ label,
 input:not(:placeholder-shown) ~ label {
-    top: -3em;
-    color: hsl(327, 90%, 28%);
-    font-size: 15px;
+    top: -2.5em;
+    color: #003366;
+    font-size: 14px;
 }
+
+/* Recover Password */
 .recover {
     text-align: right;
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
 }
+
 .recover a {
     text-decoration: none;
-    color: rgb(125, 125, 235);
+    color: #003366;
 }
+
 .recover a:hover {
-    color: blue;
     text-decoration: underline;
 }
+
+/* Buttons */
 .btn {
-    font-size: 1.1rem;
-    padding: 8px 0;
+    font-size: 1rem;
+    padding: 10px 0;
     border-radius: 5px;
     outline: none;
     border: none;
     width: 100%;
-    background: rgb(125, 125, 235);
+    background: #003366;
     color: white;
     cursor: pointer;
-    transition: 0.9s;
-}
-.btn:hover {
-    background: #07001f;
-}
-.or {
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
-    text-align: center;
-}
-.icons {
-    text-align: center;
-}
-.icons i {
-    color: rgb(125, 125, 235);
-    padding: 0.8rem 1.5rem;
-    border-radius: 10px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border: 2px solid #dfe9f5;
-    margin: 0 15px;
-    transition: 1s;
-}
-.icons i:hover {
-    background: #07001f;
-    font-size: 1.6rem;
-    border: 2px solid rgb(125, 125, 235);
-}
-.links {
-    display: flex;
-    justify-content: space-around;
-    padding: 0 4rem;
-    margin-top: 0.9rem;
-    font-weight: bold;
-}
-button {
-    color: rgb(125, 125, 235);
-    border: none;
-    background-color: transparent;
-    font-size: 1rem;
-    font-weight: bold;
-}
-button:hover {
-    text-decoration: underline;
-    color: blue;
-}
-.sign-in-image {
-    width: 100px; /* Set desired width */
-    height: 100px; /* Maintain aspect ratio */
-    display: block; /* Center the image */
-    margin: 0 auto 1rem; /* Center and add margin below */
+    transition: all 0.3s;
+    margin-top: 1rem;
 }
 
-    /* Developer Button */
-    .developer-btn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #4a90e2;
-        color: white;
-        border: none;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
-        z-index: 100;
-      }
-  
-      .developer-btn:hover {
-        background-color: #3a7bc8;
-        transform: scale(1.05);
-      }
-  
-      /* Developer Modal */
-      .developer-modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1000;
-        justify-content: center;
-        align-items: center;
-      }
-  
-      .modal-content {
-        background-color: white;
-        padding: 30px;
-        border-radius: 10px;
-        width: 550px;
-        max-width: 90%;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        position: relative;
-      }
-  
-      .close-btn {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        font-size: 20px;
-        color: #777;
-        cursor: pointer;
-        transition: color 0.3s ease;
-      }
-  
-      .close-btn:hover {
-        color: #333;
-      }
-  
-      .modal-content h3 {
-        margin-bottom: 20px;
-        color: #333;
+.btn:hover {
+    background: #001a33;
+}
+
+/* OR Divider */
+.or {
+    font-size: 1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    position: relative;
+    color: #757575;
+}
+
+.or::before,
+.or::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.or::before {
+    left: 0;
+}
+
+.or::after {
+    right: 0;
+}
+
+/* Social Icons */
+.icons {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.icons i {
+    color: #003366;
+    padding: 0.8rem;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: 1px solid #dfe9f5;
+    margin: 0 5px;
+    transition: all 0.3s;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons i:hover {
+    background: #003366;
+    color: white;
+    border: 1px solid #003366;
+}
+
+/* Links */
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.links p {
+    margin-right: 5px;
+    color: #757575;
+}
+
+button {
+    text-decoration: none;
+    color: #003366;
+    border: none;
+    background-color: transparent;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+}
+
+button:hover {
+    text-decoration: underline;
+}
+
+/* Developer Button */
+.developer-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.developer-btn:hover {
+    background-color: #001a33;
+    transform: scale(1.05);
+}
+
+/* Developer Modal */
+.developer-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #757575;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #003366;
+}
+
+.modal-content h3 {
+    margin-bottom: 1.5rem;
+    color: #003366;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.modal-content ul {
+    list-style-type: none;
+}
+
+.modal-content li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    text-align: center;
+}
+
+.modal-content li:last-child {
+    border-bottom: none;
+}
+
+.modal-content li strong {
+    color: #003366;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+    /* Tablet Styles */
+    .container {
+        width: 85%;
+        padding: 1.2rem;
+    }
+
+    .form-title {
+        font-size: 1.3rem;
+    }
+
+    .navbar {
+        padding: 12px 15px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Mobile Styles */
+    .container {
+        width: 95%;
+        padding: 1rem;
+        margin: 30px auto;
+    }
+
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
         text-align: center;
-      }
-  
-      .modal-content ul {
-        list-style-type: none;
-      }
-  
-      .modal-content li {
-        padding: 10px 0;
-        border-bottom: 1px solid #eee;
-        color: #555;
-      }
-  
-      .modal-content li:last-child {
-        border-bottom: none;
-      }
+    }
+
+    .logo {
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .form-title {
+        font-size: 1.2rem;
+        padding: 0.8rem 0;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px 0;
+    }
+
+    .or {
+        margin: 1rem 0;
+    }
+
+    .icons i {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .developer-btn {
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        left: 15px;
+    }
+}

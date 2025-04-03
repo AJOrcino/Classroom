@@ -61,7 +61,6 @@ function validateSignIn() {
     return true;
 }
 
-// Developer modal functionality
 const developerBtn = document.getElementById('developerBtn');
 const developerModal = document.getElementById('developerModal');
 const closeModal = document.getElementById('closeModal');
@@ -74,7 +73,6 @@ closeModal.addEventListener('click', () => {
   developerModal.style.display = 'none';
 });
 
-// Close modal when clicking outside
 window.addEventListener('click', (e) => {
   if (e.target === developerModal) {
     developerModal.style.display = 'none';

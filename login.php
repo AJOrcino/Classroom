@@ -1,8 +1,22 @@
 <?php
 $Image = [
     'picture' => 'Asset/sample.png', 
+];
 
-]
+$Team = [
+  [ 
+  'name' => 'Jacob Alocon',
+  'position' => 'Lead Developer'
+  ],
+  [
+    'name' => 'Allen Jefferson C. Orcino',
+    'position' => 'Frontend|Backend Developer'
+  ],
+  [
+    'name' => "Lemuel Doblada",
+    'position' => 'Frontend Developer'
+  ]
+];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +34,16 @@ $Image = [
 </head>
 
 <body>
+   <!-- Navigation Bar -->
+   <nav class="navbar">
+        <div class="logo">
+            <img src="Asset/sample.png" alt="PLMUN Logo">
+            <div>
+                <div class="logo-text"></div>
+                <div class="logo-subtext"></div>
+            </div>
+        </div>
+    </nav>
 <!-- Register -->
  <div class="container" id="signup" style="display:none;">
   <h1 class="form-title">Register</h1>
@@ -111,9 +135,10 @@ $Image = [
    <span class="close-btn" id="closeModal">&times;</span>
    <h3>Development Team</h3>
    <ul>
-    <li><strong>Jacob Alocon</strong> - Lead Developer</li>
-    <li><strong>Allen Jefferson C. Orcino</strong> - Frontend|Backend Developer</li>
-    <li><strong>Lemuel Doblada</strong> - Frontend Developer</li>
+    <!--Team List-->
+      <?php foreach ($Team as $member): ?>
+          <li><strong><?php echo htmlspecialchars($member['name']); ?></strong> - <?php echo htmlspecialchars($member['position']); ?></li>
+      <?php endforeach; ?>
    </ul>
   </div>
  </div>

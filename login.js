@@ -78,3 +78,22 @@ window.addEventListener('click', (e) => {
     developerModal.style.display = 'none';
   }
 });
+
+/* ----- SCROLL UP BUTTON ----- */
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollUpBtn = document.getElementById("scrollUpBtn");
+
+    function toggleScrollButton() {
+        scrollUpBtn.style.display = (window.scrollY > 30) ? "flex" : "none";
+    }
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    window.addEventListener("scroll", toggleScrollButton);
+    scrollUpBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        scrollToTop();
+    });
+});

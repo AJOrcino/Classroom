@@ -26,6 +26,8 @@ $Team = [
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Name ng System-->
  <title></title>
+  <!-- --------- UNICONS ---------- -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 <!-- Logo Picture-->
  <link rel="icon" href=<?php echo$Image['picture']; ?> type="image/png">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -39,7 +41,7 @@ $Team = [
         <div class="logo">
             <img src="Asset/sample.png" alt="PLMUN Logo">
             <div>
-                <div class="logo-text"></div>
+                <div class="logo-text">KUPALOT</div>
                 <div class="logo-subtext"></div>
             </div>
         </div>
@@ -52,6 +54,11 @@ $Team = [
     <i class="fas fa-user"></i>
     <input type="text" name="fName" id="fName" placeholder="First Name" required>
     <label for="fname">First Name</label>
+   </div>
+   <div class="input-group">
+    <i class="fas fa-user"></i>
+    <input type="text" name="fName" id="fName" placeholder="Middle Name" required>
+    <label for="fname">Middle Name</label>
    </div>
    <div class="input-group">
     <i class="fas fa-user"></i>
@@ -142,6 +149,9 @@ $Team = [
    </ul>
   </div>
  </div>
+ <button id="scrollUpBtn"><i class="fas fa-arrow-up"></i></button> 
+ <!-- --------- Arrow Up ---------- --> 
+ <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <!-- Link for login js-->
  <script src="login.js"></script>
 </body>

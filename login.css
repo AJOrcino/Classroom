@@ -82,54 +82,120 @@ form {
     color: #003366;
 }
 
-/* Input Fields */
+/* Enhanced Input Fields */
 .input-group {
-    padding: 1% 0;
+    padding: 1rem 0;
     position: relative;
     margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding-left: 15px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.input-group:hover {
+    border-color: #003366;
+    box-shadow: 0 0 0 2px rgba(0, 51, 102, 0.1);
 }
 
 .input-group i {
     position: absolute;
-    color: black;
+    color: #757575;
     top: 50%;
+    left: 15px;
     transform: translateY(-50%);
+    transition: color 0.3s;
+}
+
+.input-group.focused i {
+    color: #003366;
 }
 
 input {
-    color: inherit;
+    margin-top: 10px;
+    color: #333;
     width: 100%;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #757575;
-    padding: 10px 0 10px 1.5rem;
-    font-size: 15px;
+    padding: 12px 0 12px 30px;
+    font-size: 16px;
+    outline: none;
 }
 
 input:focus {
     background-color: transparent;
-    outline: transparent;
-    border-bottom: 2px solid #003366;
 }
 
 input::placeholder {
-    color: transparent;
+    color: #aaa;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+input:focus::placeholder {
+    opacity: 0.5;
 }
 
 label {
     color: #757575;
-    position: relative;
-    left: 1.2em;
-    top: -1.3em;
-    cursor: auto;
-    transition: 0.3s ease all;
+    position: absolute;
+    left: 50px;
+    top: 12px;
+    font-size: 14px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+    padding: 0 5px;
 }
 
 input:focus ~ label,
 input:not(:placeholder-shown) ~ label {
-    top: -2.5em;
+    top: -8px;
+    left: 35px;
+    font-size: 12px;
     color: #003366;
+    background-color: white;
+}
+
+/* Checkbox Styles */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    accent-color: #003366;
+    width: 18px;
+    height: 18px;
+}
+
+.checkbox-group label {
+    position: relative;
+    left: 0;
+    top: 0;
+    color: #333;
     font-size: 14px;
+    cursor: pointer;
+    padding: 0;
+    background: none;
+}
+
+/* Password Field with Toggle */
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #757575;
+    cursor: pointer;
+}
+
+.password-toggle:hover {
+    color: #003366;
 }
 
 /* Recover Password */
@@ -424,4 +490,33 @@ button:hover {
         bottom: 15px;
         left: 15px;
     }
+}
+  /* Scroll Up Button Styles */
+  #scrollUpBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 18px;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    background: #003366;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#scrollUpBtn:hover {
+    background: #003366;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
 }
